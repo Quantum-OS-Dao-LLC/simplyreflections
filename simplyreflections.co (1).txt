@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Reflections - Window Cleaning, Power Washing & Solar Panel Cleaning</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a4b84;
+            --secondary-blue: #2d71c7;
+            --light-blue: #e6f0ff;
+            --accent-green: #8dc63f;
+            --light-green: #e8f4d9;
+            --dark-text: #333333;
+            --light-text: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+        
+        .bg-primary-blue {
+            background-color: var(--primary-blue);
+        }
+        
+        .bg-secondary-blue {
+            background-color: var(--secondary-blue);
+        }
+        
+        .bg-light-blue {
+            background-color: var(--light-blue);
+        }
+        
+        .bg-accent-green {
+            background-color: var(--accent-green);
+        }
+        
+        .bg-light-green {
+            background-color: var(--light-green);
+        }
+        
+        .text-primary-blue {
+            color: var(--primary-blue);
+        }
+        
+        .text-secondary-blue {
+            color: var(--secondary-blue);
+        }
+        
+        .text-accent-green {
+            color: var(--accent-green);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .btn-secondary {
+            background-color: var(--accent-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #7ab62f;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 1s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInRight {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        /* Hamburger Menu Animation */
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-open .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .mobile-menu-open .line2 {
+            opacity: 0;
+        }
+        
+        .mobile-menu-open .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        .review-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Scroll Reveal Animation */
+        .reveal {
+            position: relative;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+        }
+        
+        .reveal.active.fade-bottom {
+            animation: fade-bottom 1s ease-in-out;
+        }
+        
+        @keyframes fade-bottom {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .circular-logo {
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: black;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Water Droplet Animation */
+        .droplet {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(45, 113, 199, 0.7);
+            border-radius: 50%;
+            animation: drop 1.5s linear infinite;
+        }
+        
+        @keyframes drop {
+            0% { transform: translateY(0) scale(1); opacity: 0.7; }
+            100% { transform: translateY(100px) scale(0.1); opacity: 0; }
+        }
+        
+        /* Ripple Effect on CTA buttons */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ripple:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+        
+        .ripple:active:after {
+            transform: scale(0, 0);
+            opacity: .3;
+            transition: 0s;
+        }
+        
+        /* Progress Bar Animation for Services */
+        .progress-bar {
+            height: 6px;
+            background-color: #e6e6e6;
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+            margin: 8px 0;
+        }
+        
+        .progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: var(--accent-green);
+            transition: width 1.5s ease;
+            border-radius: 3px;
+        }
+        
+        /* Service Area Map Highlight */
+        .service-area {
+            fill: var(--light-blue);
+            stroke: var(--primary-blue);
+            stroke-width: 1;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .service-area:hover {
+            fill: var(--accent-green);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-primary-blue fixed w-full z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="circular-logo mr-2">
+                        <img src="https://i.imghippo.com/files/cy1636RIQ.jpg" alt="Simply Reflections Logo" class="h-12">
+                    </div>
+                    <span class="text-white font-bold text-lg">TextPert.net</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="text-white hover:text-accent-green transition duration-300">Home</a>
+                    <a href="#services" class="text-white hover:text-accent-green transition duration-300">Services</a>
+                    <a href="#why-us" class="text-white hover:text-accent-green transition duration-300">Why Choose Us</a>
+                    <a href="#reviews" class="text-white hover:text-accent-green transition duration-300">Reviews</a>
+                    <a href="#service-areas" class="text-white hover:text-accent-green transition duration-300">Service Areas</a>
+                    <a href="#contact" class="text-white hover:text-accent-green transition duration-300">Contact</a>
+                    <a href="tel:4805551234" class="btn-secondary">Call Now</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <div class="hamburger-line line1"></div>
+                        <div class="hamburger-line line2"></div>
+                        <div class="hamburger-line line3"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden bg-primary-blue hidden pb-4">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-white block px-3 py-2 rounded-md hover:bg-secondary-blue">Home</a>
+                <a href="#services" class="text-white block px-3 py-2 rounded-md hover:bg-secondary-blue">Services</a>
+                <a href="#why-us" class="text-white block px-3 py-2 rounded-md hover:bg-secondary-blue">Why Choose Us</a>
+                <a href="#reviews" class="text-white block px-3 py-2 rounded-md hover:bg-secondary-blue">Reviews</a>
+                <a href="#service-areas" class="text-white block px-3 py-2 rounded-md hover:bg-secondary-blue">Service Areas</a>
+                <a href="#contact" class="text-white block px-3 py-2 rounded-md hover:bg-secondary-blue">Contact</a>
+                <a href="tel:4805551234" class="btn-secondary block text-center mx-3 mt-4">Call Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 pb-12 bg-gradient-to-br from-primary-blue via-secondary-blue to-accent-green text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 slide-in-left">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                    Crystal Clear Results, <span class="text-accent-green">Every Time</span>
+                </h1>
+                <p class="text-lg md:text-xl mb-8">
+                    Professional window cleaning, power washing, and solar panel cleaning services in Phoenix, AZ.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:4805551234" class="btn-secondary ripple">
+                        <i class="fas fa-phone-alt mr-2"></i> Call Now
+                    </a>
+                    <a href="#contact" class="btn-primary ripple">
+                        <i class="fas fa-envelope mr-2"></i> Get a Free Quote
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center">
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <span class="ml-2">5-Star Rated on Google</span>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 relative slide-in-right">
+                <div class="relative">
+                    <div class="floating-animation">
+                        <svg width="500" height="400" viewBox="0 0 500 400" class="w-full h-auto">
+                            <defs>
+                                <linearGradient id="window-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#e6f0ff" />
+                                    <stop offset="100%" stop-color="#c7d8f2" />
+                                </linearGradient>
+                                <linearGradient id="frame-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#1a4b84" />
+                                    <stop offset="100%" stop-color="#2d71c7" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Window Frame -->
+                            <rect x="50" y="50" width="400" height="300" rx="10" fill="url(#frame-gradient)" />
+                            <!-- Window Glass -->
+                            <rect x="70" y="70" width="175" height="125" rx="5" fill="url(#window-gradient)" />
+                            <rect x="255" y="70" width="175" height="125" rx="5" fill="url(#window-gradient)" />
+                            <rect x="70" y="205" width="175" height="125" rx="5" fill="url(#window-gradient)" />
+                            <rect x="255" y="205" width="175" height="125" rx="5" fill="url(#window-gradient)" />
+                            <!-- Squeegee Animation -->
+                            <g id="squeegee" transform="translate(100, 100)">
+                                <rect x="0" y="0" width="60" height="10" rx="2" fill="#8dc63f" />
+                                <rect x="25" y="10" width="10" height="40" rx="2" fill="#8dc63f" />
+                            </g>
+                            <!-- Water Droplets -->
+                            <circle class="droplet" cx="150" cy="150" r="3" fill="#2d71c7" opacity="0.7">
+                                <animate attributeName="cy" from="150" to="250" dur="2s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" from="0.7" to="0" dur="2s" repeatCount="indefinite" />
+                                <animate attributeName="r" from="3" to="1" dur="2s" repeatCount="indefinite" />
+                            </circle>
+                            <circle class="droplet" cx="200" cy="180" r="3" fill="#2d71c7" opacity="0.7">
+                                <animate attributeName="cy" from="180" to="280" dur="1.5s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" from="0.7" to="0" dur="1.5s" repeatCount="indefinite" />
+                                <animate attributeName="r" from="3" to="1" dur="1.5s" repeatCount="indefinite" />
+                            </circle>
+                            <circle class="droplet" cx="300" cy="200" r="3" fill="#2d71c7" opacity="0.7">
+                                <animate attributeName="cy" from="200" to="300" dur="1.8s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" from="0.7" to="0" dur="1.8s" repeatCount="indefinite" />
+                                <animate attributeName="r" from="3" to="1" dur="1.8s" repeatCount="indefinite" />
+                            </circle>
+                            <!-- Shine Effect -->
+                            <circle cx="120" cy="100" r="15" fill="white" opacity="0.5">
+                                <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="350" cy="230" r="20" fill="white" opacity="0.5">
+                                <animate attributeName="opacity" values="0.5;0.8;0.5" dur="4s" repeatCount="indefinite" />
+                            </circle>
+                        </svg>
+                    </div>
+                    <!-- Additional animated water droplets -->
+                    <div class="droplet" style="left:20%; top:20%"></div>
+                    <div class="droplet" style="left:60%; top:30%"></div>
+                    <div class="droplet" style="left:40%; top:50%"></div>
+                    <div class="droplet" style="left:80%; top:40%"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Wave Bottom Effect -->
+        <div class="w-full absolute bottom-0 left-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+                <path fill="#ffffff" fill-opacity="1" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,80C672,64,768,64,864,69.3C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-6 bg-light-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="p-4 fade-in">
+                    <div class="text-primary-blue mb-2">
+                        <i class="fas fa-calendar-check text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold">Est. 2024</h3>
+                </div>
+                <div class="p-4 fade-in" style="animation-delay: 0.2s;">
+                    <div class="text-primary-blue mb-2">
+                        <i class="fas fa-shield-alt text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold">Fully Insured</h3>
+                </div>
+                <div class="p-4 fade-in" style="animation-delay: 0.4s;">
+                    <div class="text-primary-blue mb-2">
+                        <i class="fas fa-thumbs-up text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold">100% Satisfaction</h3>
+                </div>
+                <div class="p-4 fade-in" style="animation-delay: 0.6s;">
+                    <div class="text-primary-blue mb-2">
+                        <i class="fas fa-star text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold">5-Star Service</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal fade-bottom">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-blue">Our Professional Services</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    We offer premium cleaning services to keep your property looking its best. Our trained professionals use high-quality equipment and eco-friendly products.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Window Cleaning Service -->
+                <div class="service-card reveal fade-bottom">
+                    <div class="h-56 overflow-hidden">
+                        <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                            <i class="fas fa-window-maximize text-6xl text-primary-blue"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-primary-blue">Window Cleaning</h3>
+                        <p class="text-gray-600 mb-4">
+                            Crystal clear, streak-free windows that enhance your view and let in more natural light. We clean all types of windows, including hard-to-reach ones.
+                        </p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%;"></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 mb-6">
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">Residential</span>
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">Commercial</span>
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">High-Rise</span>
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">Streak-Free</span>
+                        </div>
+                        <a href="#contact" class="btn-primary w-full block text-center ripple">Get a Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Power Washing Service -->
+                <div class="service-card reveal fade-bottom" style="animation-delay: 0.2s;">
+                    <div class="h-56 overflow-hidden">
+                        <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                            <i class="fas fa-water text-6xl text-primary-blue"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-primary-blue">Power Washing</h3>
+                        <p class="text-gray-600 mb-4">
+                            Revitalize your property's exterior surfaces, including driveways, patios, decks, and siding, removing dirt, grime, and stains.
+                        </p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%;"></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 mb-6">
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">Driveways</span>
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">Patios</span>
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">Sidewalks</span>
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">Siding</span>
+                        </div>
+                        <a href="#contact" class="btn-primary w-full block text-center ripple">Get a Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Solar Panel Cleaning Service -->
+                <div class="service-card reveal fade-bottom" style="animation-delay: 0.4s;">
+                    <div class="h-56 overflow-hidden">
+                        <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                            <i class="fas fa-solar-panel text-6xl text-primary-blue"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-primary-blue">Solar Panel Cleaning</h3>
+                        <p class="text-gray-600 mb-4">
+                            Improve energy efficiency by up to 30% with our specialized solar panel cleaning service. Safe and effective cleaning methods.
+                        </p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%;"></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 mb-6">
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">Efficiency</span>
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">Safe</span>
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">Eco-Friendly</span>
+                            <span class="px-3 py-1 bg-light-blue rounded-full text-sm text-primary-blue">Professional</span>
+                        </div>
+                        <a href="#contact" class="btn-primary w-full block text-center ripple">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="py-16 bg-light-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal fade-bottom">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-blue">Why Choose Simply Reflections</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    We're committed to providing exceptional cleaning services with a focus on quality, reliability, and customer satisfaction.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md reveal fade-bottom">
+                    <div class="text-accent-green mb-4">
+                        <i class="fas fa-check-circle text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary-blue">Professional Team</h3>
+                    <p class="text-gray-600">
+                        Our highly trained technicians are experienced, friendly, and dedicated to delivering outstanding results.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md reveal fade-bottom" style="animation-delay: 0.1s;">
+                    <div class="text-accent-green mb-4">
+                        <i class="fas fa-tools text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary-blue">Advanced Equipment</h3>
+                    <p class="text-gray-600">
+                        We use state-of-the-art equipment and high-quality cleaning solutions for superior results every time.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md reveal fade-bottom" style="animation-delay: 0.2s;">
+                    <div class="text-accent-green mb-4">
+                        <i class="fas fa-leaf text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary-blue">Eco-Friendly Products</h3>
+                    <p class="text-gray-600">
+                        We're committed to using environmentally friendly cleaning products that are safe for your family and the planet.
+                    </p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md reveal fade-bottom" style="animation-delay: 0.3s;">
+                    <div class="text-accent-green mb-4">
+                        <i class="fas fa-clock text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary-blue">Punctuality</h3>
+                    <p class="text-gray-600">
+                        We value your time and always arrive on schedule, completing work efficiently without sacrificing quality.
+                    </p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md reveal fade-bottom" style="animation-delay: 0.4s;">
+                    <div class="text-accent-green mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary-blue">Fully Insured</h3>
+                    <p class="text-gray-600">
+                        We're fully insured for your peace of mind, protecting your property and our team during all cleaning operations.
+                    </p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md reveal fade-bottom" style="animation-delay: 0.5s;">
+                    <div class="text-accent-green mb-4">
+                        <i class="fas fa-smile text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary-blue">Satisfaction Guaranteed</h3>
+                    <p class="text-gray-600">
+                        We stand behind our work with a 100% satisfaction guarantee, ensuring you're completely happy with our services.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section id="reviews" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal fade-bottom">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-blue">What Our Customers Say</h2>
+                <div class="flex justify-center items-center mb-4">
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    </div>
+                    <span class="ml-2 text-lg font-semibold">5.0 Rating on Google</span>
+                </div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Read what our satisfied customers have to say about our professional cleaning services.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="review-card reveal fade-bottom">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "I'm amazed at how clean my windows are! The team was professional, courteous, and did an exceptional job. My windows have never looked better!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary-blue rounded-full flex items-center justify-center text-white font-bold">
+                            JS
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold">Jennifer S.</h4>
+                            <p class="text-sm text-gray-500">Scottsdale, AZ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card reveal fade-bottom" style="animation-delay: 0.2s;">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "The power washing service made my driveway and patio look brand new! I couldn't believe how much dirt and grime had built up. Highly recommend!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary-blue rounded-full flex items-center justify-center text-white font-bold">
+                            MR
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold">Michael R.</h4>
+                            <p class="text-sm text-gray-500">Peoria, AZ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review-card reveal fade-bottom" style="animation-delay: 0.4s;">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "After Simply Reflections cleaned my solar panels, I noticed an immediate improvement in their efficiency. Great service and friendly staff!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary-blue rounded-full flex items-center justify-center text-white font-bold">
+                            AL
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold">Amanda L.</h4>
+                            <p class="text-sm text-gray-500">North Phoenix, AZ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="https://g.page/r/EXAMPLE" target="_blank" class="inline-flex items-center text-primary-blue hover:text-secondary-blue transition duration-300">
+                    <span>See all reviews on Google</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section id="service-areas" class="py-16 bg-light-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal fade-bottom">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-blue">Areas We Serve</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    We proudly offer our professional cleaning services throughout the greater Phoenix metropolitan area.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="reveal fade-bottom">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-primary-blue">Our Service Locations</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Peoria
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Glendale
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Scottsdale
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        North Phoenix
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Central Phoenix
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Vistancia
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Westwing
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Stetson Hills
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Arrowhead
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Anthem
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Dove Valley
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Happy Valley
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-accent-green mr-2"></i>
+                                        Deer Valley
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-gray-600">
+                                Not sure if we serve your area? <a href="#contact" class="text-primary-blue hover:text-secondary-blue">Contact us</a> to find out!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal fade-bottom" style="animation-delay: 0.3s;">
+                    <!-- Google Map Integration -->
+                    <div class="h-96 bg-gray-300 rounded-lg overflow-hidden shadow-md">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d213267.52126926376!2d-112.34467868212759!3d33.60503993430687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b43e53c03bcd5%3A0xb9c497aa9054170!2sPhoenix%2C%20AZ!5e0!3m2!1sen!2sus!4v1679982345678!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-2/3 mb-8 md:mb-0 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready for Crystal Clear Results?</h2>
+                    <p class="text-lg">
+                        Contact us today for a free quote and experience the Simply Reflections difference. Satisfaction guaranteed!
+                    </p>
+                </div>
+                <div class="md:w-1/3 text-center md:text-right fade-in" style="animation-delay: 0.3s;">
+                    <a href="tel:4805551234" class="btn-secondary ripple inline-block mb-4 md:mb-0 md:mr-4">
+                        <i class="fas fa-phone-alt mr-2"></i> Call Now
+                    </a>
+                    <a href="#contact" class="btn-secondary ripple inline-block">
+                        <i class="fas fa-envelope mr-2"></i> Get a Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal fade-bottom">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary-blue">Contact Us</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Ready to transform your property with our professional cleaning services? Reach out to us today!
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="reveal fade-bottom">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-primary-blue">Send Us a Message</h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue" required>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 mb-2">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue">
+                            </div>
+                            <div class="mb-4">
+                                <label for="service" class="block text-gray-700 mb-2">Service Interested In</label>
+                                <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue">
+                                    <option value="">Select a Service</option>
+                                    <option value="window-cleaning">Window Cleaning</option>
+                                    <option value="power-washing">Power Washing</option>
+                                    <option value="solar-panel-cleaning">Solar Panel Cleaning</option>
+                                    <option value="multiple">Multiple Services</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-blue"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary ripple w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="reveal fade-bottom" style="animation-delay: 0.3s;">
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-primary-blue">Get in Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-light-blue rounded-full flex items-center justify-center text-primary-blue mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">Phone</p>
+                                    <a href="tel:4805551234" class="text-primary-blue hover:text-secondary-blue">(480) 555-1234</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-light-blue rounded-full flex items-center justify-center text-primary-blue mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">Email</p>
+                                    <a href="mailto:info@simplyreflections.co" class="text-primary-blue hover:text-secondary-blue">info@simplyreflections.co</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-light-blue rounded-full flex items-center justify-center text-primary-blue mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">Service Area</p>
+                                    <p>Greater Phoenix Metropolitan Area</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-light-blue rounded-full flex items-center justify-center text-primary-blue mr-4">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">Hours</p>
+                                    <p>Monday - Saturday: 7am - 6pm</p>
+                                    <p>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-primary-blue">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-light-blue rounded-full flex items-center justify-center text-primary-blue hover:bg-primary-blue hover:text-white transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-light-blue rounded-full flex items-center justify-center text-primary-blue hover:bg-primary-blue hover:text-white transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-light-blue rounded-full flex items-center justify-center text-primary-blue hover:bg-primary-blue hover:text-white transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-light-blue rounded-full flex items-center justify-center text-primary-blue hover:bg-primary-blue hover:text-white transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-light-blue rounded-full flex items-center justify-center text-primary-blue hover:bg-primary-blue hover:text-white transition duration-300">
+                                <i class="fab fa-yelp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-blue text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="circular-logo mr-2 bg-black">
+                            <img src="https://i.imghippo.com/files/cy1636RIQ.jpg" alt="Simply Reflections Logo" class="h-10">
+                        </div>
+                        <span class="font-bold text-lg">TextPert.net</span>
+                    </div>
+                    <p class="mb-4">
+                        Professional window cleaning, power washing, and solar panel cleaning services in Phoenix, Arizona.
+                    </p>
+                    <p class="text-sm">
+                        EST. 2024
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-accent-green transition duration-300">Window Cleaning</a></li>
+                        <li><a href="#" class="hover:text-accent-green transition duration-300">Power Washing</a></li>
+                        <li><a href="#" class="hover:text-accent-green transition duration-300">Solar Panel Cleaning</a></li>
+                        <li><a href="#" class="hover:text-accent-green transition duration-300">Residential Services</a></li>
+                        <li><a href="#" class="hover:text-accent-green transition duration-300">Commercial Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Service Areas</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-accent-green transition duration-300">Peoria</a></li>
+                        <li><a href="#" class="hover:text-accent-green transition duration-300">Glendale</a></li>
+                        <li><a href="#" class="hover:text-accent-green transition duration-300">Scottsdale</a></li>
+                        <li><a href="#" class="hover:text-accent-green transition duration-300">Phoenix</a></li>
+                        <li><a href="#" class="hover:text-accent-green transition duration-300">View All Areas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-accent-green"></i>
+                            <a href="tel:4805551234" class="hover:text-accent-green transition duration-300">(480) 555-1234</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-accent-green"></i>
+                            <a href="mailto:info@simplyreflections.co" class="hover:text-accent-green transition duration-300">info@simplyreflections.co</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-accent-green"></i>
+                            <span>Phoenix Metropolitan Area</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <a href="#contact" class="btn-secondary ripple">Get a Free Quote</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2024 Simply Reflections. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-sm text-gray-300 hover:text-white mr-4">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-300 hover:text-white mr-4">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-300 hover:text-white">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Call/Text Bottom Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-primary-blue text-white z-40 flex">
+        <a href="tel:4805551234" class="flex-1 py-3 flex flex-col items-center justify-center ripple">
+            <i class="fas fa-phone-alt mb-1"></i>
+            <span class="text-sm">Call Now</span>
+        </a>
+        <a href="sms:4805551234" class="flex-1 py-3 flex flex-col items-center justify-center bg-accent-green ripple">
+            <i class="fas fa-sms mb-1"></i>
+            <span class="text-sm">Text Us</span>
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-20 right-4 md:bottom-6 md:right-6 bg-accent-green text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg z-50 opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.classList.toggle('mobile-menu-open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.classList.remove('mobile-menu-open');
+            });
+        });
+        
+        // Progress Bar Animation
+        const progressBars = document.querySelectorAll('.progress');
+        
+        function animateProgressBars() {
+            progressBars.forEach(progress => {
+                const targetWidth = progress.style.width;
+                progress.style.width = '0';
+                setTimeout(() => {
+                    progress.style.width = targetWidth;
+                }, 100);
+            });
+        }
+        
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        function checkReveal() {
+            const windowHeight = window.innerHeight;
+            const revealPoint = 150;
+            
+            revealElements.forEach(element => {
+                const revealTop = element.getBoundingClientRect().top;
+                
+                if (revealTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+            
+            // Animate progress bars when they come into view
+            const progressContainers = document.querySelectorAll('.progress-bar');
+            progressContainers.forEach(container => {
+                const containerTop = container.getBoundingClientRect().top;
+                
+                if (containerTop < windowHeight - revealPoint) {
+                    const progress = container.querySelector('.progress');
+                    if (progress.style.width === '0px' || progress.style.width === '') {
+                        progress.style.width = progress.getAttribute('data-width') || '100%';
+                    }
+                }
+            });
+        }
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        function checkScrollPosition() {
+            if (window.scrollY > 500) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        }
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Initialize animations
+        window.addEventListener('load', function() {
+            animateProgressBars();
+            checkReveal();
+            checkScrollPosition();
+        });
+        
+        window.addEventListener('scroll', function() {
+            checkReveal();
+            checkScrollPosition();
+        });
+        
+        // Add ripple effect to buttons
+        const rippleButtons = document.querySelectorAll('.ripple');
+        
+        rippleButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple-effect');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+        
+        // Animate the squeegee in the hero section
+        const squeegee = document.getElementById('squeegee');
+        let direction = 1;
+        let posX = 100;
+        let posY = 100;
+        
+        function animateSqueegee() {
+            if (squeegee) {
+                posX += 2 * direction;
+                
+                if (posX > 300 || posX < 100) {
+                    direction *= -1;
+                }
+                
+                squeegee.setAttribute('transform', `translate(${posX}, ${posY})`);
+                requestAnimationFrame(animateSqueegee);
+            }
+        }
+        
+        animateSqueegee();
+        
+        // Simulated Google Reviews Loading
+        const reviewCards = document.querySelectorAll('.review-card');
+        let currentReviewIndex = 0;
+        
+        function rotateReviews() {
+            reviewCards.forEach((card, index) => {
+                if (index === currentReviewIndex) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                } else {
+                    card.style.opacity = '0.7';
+                    card.style.transform = 'translateY(0px)';
+                }
+            });
+            
+            currentReviewIndex = (currentReviewIndex + 1) % reviewCards.length;
+        }
+        
+        // Uncomment to enable review rotation
+        // setInterval(rotateReviews, 5000);
+    </script>
+</body>
+</html>
+
